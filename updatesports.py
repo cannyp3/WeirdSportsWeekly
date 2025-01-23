@@ -1,0 +1,71 @@
+from openai import OpenAI
+import json
+from datetime import datetime
+import pytz
+import os
+
+# Access the API key from environment variable
+api_key = os.environ.get('PERPLEXITY_API_KEY')
+if not api_key:
+    raise ValueError("PERPLEXITY_API_KEY environment variable is not set")
+
+
+# Initialize Perplexity client
+client = OpenAI(
+    api_key=api_key,
+    base_url="https://api.perplexity.ai"
+)
+
+def get_sports_summary():
+    messages = [
+        {
+            "role": "system",
+            "content": "Generate a summary of today's top news for Boston sports teams"
+        },
+        {
+            "role": "user",
+            "content": "What are the latest updates for the Celtics, Bruins, Red Sox, and Patriots?"
+        }
+    ]
+    
+    response = client.chat.completions.create(
+        model="llama-3.1-sonar-small-128k-online",
+        messages=messages
+    )
+    return response.choices[0].message.content
+
+
+def update_html():
+  
+    summary = get_sports_summary()
+    if not summary:
+        raise ValueError("Failed to retrieve sports summary")
+    timestamp = datetime.now(pytz.timezone('US/Eastern')).strftime('%Y-%m-%d %H:%M:%S EST')
+    
+    html_content = f"""
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Boston Sports Daily Update</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Boston Sports News Summary</h1>
+        <p>Last updated: {timestamp}</p>
+        <div id="content"></div>
+        <script>
+            const converter = new showdown.Converter();
+            const markdown = `{summary}`;
+            document.getElementById('content').innerHTML = converter.makeHtml(markdown);
+        </script>
+    </body>
+    </html>
+    """
+    
+    with open('index.html', 'w') as f:
+        f.write(html_content)
+
+update_html()

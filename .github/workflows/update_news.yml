@@ -1,0 +1,26 @@
+name: Update Boston Sports News
+on:
+  schedule:
+    - cron: '0 9 * * *'
+jobs:
+  update-news:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      - name: Install dependencies
+        run: |
+          pip install openai pytz
+      - name: Run update script
+        env:
+          PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
+        run: python updatesports.py
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add index.html styles.css
+          git commit -m "Update sports news"
+          git push

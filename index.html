@@ -1,0 +1,36 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Boston Sports Daily Update</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Boston Sports News Summary</h1>
+        <p>Last updated: 2025-01-23 04:13:26 EST</p>
+        <div id="content"></div>
+        <script>
+            const converter = new showdown.Converter();
+            const markdown = `Here are the latest updates for the Celtics, Bruins, Red Sox, and Patriots:
+
+### Celtics
+- **Recent Game**: The Celtics defeated the Los Angeles Clippers 117-113 on January 22, 2025. Jaylen Brown led the team with 25 points, 6 assists, and 3 steals, while Jayson Tatum contributed 24 points, 8 assists, and 7 rebounds. Derrick Jones Jr. added 29 points, 7 rebounds, and 4 three-pointers to the Celtics' win, improving their record to 31-13 [3].
+
+### Bruins
+- **Recent Game**: The Bruins lost to the New Jersey Devils 4-3 on January 22, 2025. The Devils ended their four-game losing streak with this win. Mark Kastelic is out due to an upper-body injury, and Max Jones replaced him in the lineup. Jeremy Swayman will start in net for the Bruins in their next game [4].
+
+### Red Sox
+- **Offseason Moves**: The Red Sox have bolstered their starting rotation with the additions of Walker Buehler and Garrett Crochet. However, they are still seeking a right-handed hitter to strengthen their lineup. Alex Bregman and Nolan Arenado are potential targets for the team. The Red Sox are in a "waiting game" for any major roster moves before Spring Training [5].
+
+### Patriots
+- **Offseason Needs**: The Patriots face significant roster needs heading into the 2025 offseason. Key areas include improving the overall talent level across multiple positions on both sides of the ball. The team is set at quarterback with Drake Maye as the starter and Joe Milton as the backup. The punter and long snapper positions are also considered stable [1].
+
+These updates provide a snapshot of the current activities and needs for each Boston sports team.`;
+            document.getElementById('content').innerHTML = converter.makeHtml(markdown);
+        </script>
+    </body>
+    </html>
+    

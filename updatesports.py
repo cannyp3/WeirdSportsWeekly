@@ -20,11 +20,11 @@ def get_sports_summary():
     messages = [
         {
             "role": "system",
-            "content": "Generate a summary of today's top news for Boston sports teams"
+            "content": "Generate three short, weird sports news stories. Each story should be a paragraph summary of an odd or unusual event from the sports world. Do not include any links."
         },
         {
             "role": "user",
-            "content": "What are the latest updates for the Celtics, Bruins, Red Sox, and Patriots?"
+            "content": "What are three weird sports news stories?"
         }
     ]
     
@@ -46,14 +46,14 @@ def update_html():
     <!DOCTYPE html>
     <html>
     <head>
-        <title>Boston Sports Daily Update</title>
+        <title>Odd Sports Update</title>
         <link rel="stylesheet" href="styles.css">
         <script src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <h1>Boston Sports News Summary</h1>
+        <h1>Odd Sports News Summary</h1>
         <p>Last updated: {timestamp}</p>
         <div id="content"></div>
         <script>
@@ -68,4 +68,5 @@ def update_html():
     with open('index.html', 'w') as f:
         f.write(html_content)
 
-update_html()
+if __name__ == "__main__":
+    update_html()

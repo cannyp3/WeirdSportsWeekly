@@ -1,7 +1,12 @@
 name: Update Boston Sports News
 on:
-  schedule:
-    - cron: '0 9 * * *'
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+#on:
+#  schedule:
+#    - cron: '0 9 * * *'
 jobs:
   update-news:
     runs-on: ubuntu-latest

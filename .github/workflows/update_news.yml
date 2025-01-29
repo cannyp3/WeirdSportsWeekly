@@ -1,11 +1,7 @@
 name: Update Odd Sports News
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
- # schedule:
- #   - cron: '0 9 * * 1'
+  schedule:
+    - cron: '0 9 * * 1'
 jobs:
   update-news:
     runs-on: ubuntu-latest

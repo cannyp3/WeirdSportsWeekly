@@ -1,8 +1,8 @@
 from openai import OpenAI
-import json
 from datetime import datetime
 import pytz
 import os
+import re
 
 # Access the API key from environment variable
 api_key = os.environ.get('PERPLEXITY_API_KEY')
@@ -15,6 +15,12 @@ client = OpenAI(
     api_key=api_key,
     base_url="https://api.perplexity.ai"
 )
+
+def clean_perplexity_response(text):
+    # Remove bracketed references at the end of sentences
+    pattern = r'\[\d+\]'
+    cleaned_text = re.sub(pattern, '', text)
+    return cleaned_text
 
 def get_sports_summary():
     messages = [
@@ -32,7 +38,11 @@ def get_sports_summary():
         model="llama-3.1-sonar-small-128k-online",
         messages=messages
     )
-    return response.choices[0].message.content
+
+    # Clean the response before returning it
+    raw_content = response.choices[0].message.content
+    cleaned_content = clean_perplexity_response(raw_content)
+    return cleaned_content
 
 
 def update_html():

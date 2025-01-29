@@ -17,9 +17,9 @@ client = OpenAI(
 )
 
 def clean_perplexity_response(text):
-    # Remove bracketed references at the end of sentences
-    pattern = r'\[\d+\]'
-    cleaned_text = re.sub(pattern, '', text)
+    # Remove bracketed references and any space before periods
+    pattern = r'\s*\[\d+\]\s*\.'
+    cleaned_text = re.sub(pattern, '.', text)
     return cleaned_text
 
 def get_sports_summary():

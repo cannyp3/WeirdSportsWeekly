@@ -10,17 +10,20 @@
     </head>
     <body>
         <h1>Odd Sports News Summary</h1>
-        <p>Last updated: 2025-01-28 19:44:39 EST</p>
+        <p>Last updated: 2025-01-28 19:50:18 EST</p>
         <div id="content"></div>
         <script>
             const converter = new showdown.Converter();
-            const markdown = `Here are three unusual sports news stories from the past few years:
+            const markdown = `Here are three unusual, bizarre, or weird sports news stories from the past few years:
 
-1. **2021 Belgian Grand Prix**: This Formula One race is notable for being the shortest race in history, with only three laps completed due to heavy rain and a series of caution periods. The event was more about safety than actual racing, making it a bizarre and memorable incident in motorsports .
+1. **2021 Belgian Grand Prix**:
+   - The 2021 Belgian Grand Prix was notable for being the shortest race in Formula One history. Due to heavy rain, the race was reduced to three laps of caution, effectively making it a non-racing event.
 
-2. **2018 Winter Olympics - Elizabeth Swaney**: Elizabeth Swaney, a Hungarian-American freestyle skier, competed in the halfpipe event despite being incapable of performing basic tricks. Her participation was seen as one of the most bizarre moments in the 2018 Winter Olympics, highlighting the sometimes unconventional nature of competitive sports .
+2. **2018 Winter Olympics - Elizabeth Swaney**:
+   - Elizabeth Swaney, a Hungarian-American freestyle skier, competed in the halfpipe event at the 2018 Winter Olympics despite being incapable of performing basic tricks. Her participation was seen as one of the most bizarre moments in recent Olympic history.
 
-3. **2020 NFL Season - David Ayres**: David Ayres, a 42-year-old arena building operator, briefly played as an emergency goalie in the National Hockey League (NHL) during the 2020 COVID-19 pandemic. His unexpected appearance on the ice made headlines and added to the unique challenges faced by sports during the pandemic .`;
+3. **2010 Wimbledon Championships - Isner-Mahut Match**:
+   - The Isner-Mahut match at the 2010 Wimbledon Championships holds the record for the longest tennis match in history, lasting 11 hours and 5 minutes. The match was a five-set thriller that ended with John Isner winning 6-4, 3-6, 6-7, 7-6, 70-68.`;
             document.getElementById('content').innerHTML = converter.makeHtml(markdown);
         </script>
     </body>

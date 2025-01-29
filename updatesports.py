@@ -20,7 +20,7 @@ def get_sports_summary():
     messages = [
         {
             "role": "system",
-            "content": "Generate three short, weird sports news stories. Each story should be a paragraph summary of an odd or unusual event from the sports world from the past few years."
+            "content": "Search the web for three unusual, bizarre, or weird sports news stories from the past few years. Focus on odd events, strange coincidences, or peculiar incidents in sports. Provide a short paragraph summary for each story."
         },
         {
             "role": "user",

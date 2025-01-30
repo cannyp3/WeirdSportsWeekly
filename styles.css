@@ -4,21 +4,23 @@ body {
     padding: 20px;
     font-family: Arial, sans-serif;
     line-height: 1.6;
+    background-color: #000000;
+    color: #ffffff;
 }
 
 h1 {
-    color: #1a365d;
+    color: #ffffff;
     text-align: center;
 }
 
 #content {
-    background: #f8f9fa;
+    background: #1a1a1a;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(255,255,255,0.1);
 }
 
 p {
-    color: #666;
+    color: #cccccc;
     font-size: 0.9em;
 }

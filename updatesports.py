@@ -58,14 +58,14 @@ def update_html():
     <!DOCTYPE html>
     <html>
     <head>
-        <title>Odd Sports Update</title>
+        <title>Weird Sports Weekly</title>
         <link rel="stylesheet" href="styles.css">
         <script src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <h1>Odd Sports News Summary</h1>
+        <h1>Weird Sports News Summary</h1>
         <p>Last updated: {timestamp}</p>
         <div id="content"></div>
         <script>

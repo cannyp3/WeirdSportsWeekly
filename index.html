@@ -2,25 +2,28 @@
     <!DOCTYPE html>
     <html>
     <head>
-        <title>Odd Sports Update</title>
+        <title>Weird Sports Weekly</title>
         <link rel="stylesheet" href="styles.css">
         <script src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <h1>Odd Sports News Summary</h1>
-        <p>Last updated: 2025-01-28 19:53:37 EST</p>
+        <h1>Weird Sports News Summary</h1>
+        <p>Last updated: 2025-02-03 04:08:53 EST</p>
         <div id="content"></div>
         <script>
             const converter = new showdown.Converter();
-            const markdown = `Here are three unusual sports news stories from the past few years:
+            const markdown = `Here are three unusual, bizarre, or weird sports news stories from the past few years:
 
-1. **2021 Belgian Grand Prix**: This Formula One race was notable for its lack of actual racing. Due to heavy rain, the event was reduced to three laps of caution, making it the shortest race in Formula One history.
+1. **Justin Turner's COVID-19 Celebration**:
+   In 2020, during Game 6 of the World Series, Los Angeles Dodgers star Justin Turner tested positive for COVID-19 but still participated in the game. After the Dodgers won, Turner removed his mask and celebrated with his teammates, despite being positive for the virus. This incident was widely criticized for its poor decision-making and lack of consideration for others' health.
 
-2. **2018 Winter Olympics – Freestyle Skiing**: Elizabeth Swaney, a Hungarian-American skier, competed in the halfpipe event despite being incapable of performing basic tricks. Her participation was widely covered due to her unusual skills and the controversy surrounding her inclusion.
+2. **Mike Tyson and Roy Jones Jr.'s Exhibition Boxing Match**:
+   In November 2020, Mike Tyson and Roy Jones Jr. engaged in an exhibition boxing match that was more of a spectacle than a competitive fight. The match was judged a draw, and it raised questions about the purpose and legitimacy of such events.
 
-3. **2012 Daytona 500**: The 54th running of the Daytona 500 did not finish until early Tuesday morning due to rain and a freak jet dryer accident. The event was delayed for several hours, causing it to extend into the night.`;
+3. **Randy Johnson's Bird Encounter**:
+   In a 2001 baseball game, Hall of Fame pitcher Randy Johnson was involved in an extraordinary incident where a bird flew into the path of one of his pitches, causing it to explode in a cloud of feathers. This surreal moment highlighted the unpredictability in sports and sparked widespread conversation.`;
             document.getElementById('content').innerHTML = converter.makeHtml(markdown);
         </script>
     </body>

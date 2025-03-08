@@ -1,7 +1,8 @@
 name: Update Weird Sports Weekly
 on:
-  schedule:
-    - cron: '0 9 * * 1'
+  push:
+    branches: ["main"]
+    
 jobs:
   update-news:
     runs-on: ubuntu-latest
